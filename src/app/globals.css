@@ -2,4 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+.hero {
+    display: flex;
+    background-image: url('../../public/images/home/furgoneta.webp');
+    min-height: 90vh;
+    background-size: cover;
+    position: relative;
+}
 
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.6;
+}
