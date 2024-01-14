@@ -1,7 +1,7 @@
 export const HeaderInfo = () => {
     return (
         <section className="border-b-2">
-            <div className="container flex justify-between mx-auto py-4">
+            <div className="container flex justify-between items-center mx-auto px-2 py-4">
                 <span className="text-understate text-sm">Teléfono: 933 531 443</span>
                 <a href="https://www.facebook.com/Transportes-Y-Servicios-VALSO-111836541543084/" target="_blank" rel="noopener noreferrer">
                     <svg className="h-6" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 50 50">

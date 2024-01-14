@@ -23,7 +23,7 @@ const qualities: CardProps[] = [
 
 export const Qualities = () => {
     return (
-        <div className="grid grid-cols-3 py-12 container mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 py-12 container mx-auto">
             {
                 qualities.map((quality, index) => (
                     <Card key={index} {...quality} />
