@@ -8,7 +8,7 @@ const data = {
 
 export const Hero = () => {
     return (
-        <main className="hero">
+        <main className="bg-hero-image hero">
             <div className="relative flex flex-col w-full md:w-1/2 h-auto justify-start
             pt-36 pb-20 px-8 gap-12 items-start text-white">
                 <h1 className="text-2xl md:text-6xl">{data.title}</h1>

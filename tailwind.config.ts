@@ -12,6 +12,8 @@ const config: Config = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'hero-image': "url('../../public/images/home/furgoneta.webp');",
+        'services-image': "url('../../public/images/home/descargar-material.webp');",
       },
       colors: {
         primary: "#05b772",

@@ -39,3 +39,24 @@ export const qualities: CardProps[] = [
         color: CardColor.WHITE
     }
 ]
+
+export const services: CardProps[] = [
+    {
+        image: "/images/home/camion.png",
+        title: "Transporte de Carga Interno y Fletes",
+        description: "Contrate nuestras unidades por día para recorridos internos a modalidad máquina seca, operada y/o combustible. Así como contratos por flete, por tonelada y/o por kilometraje recorrido",
+        color: CardColor.WHITE
+    },
+    {
+        image: "/images/home/camion-personal.png",
+        title: "Transporte de Personal",
+        description: "Contrate nuestros distintos tipos de unidades de transporte de personal: buses, minibuses, van, minivan; por ruta programada y no programada, tanto traslado externo como interno.",
+        color: CardColor.GREEN
+    },
+    {
+        image: "/images/home/camion-delivery.png",
+        title: "Repartos Courier",
+        description: "Contrate nuestras unidades de reparto para distribuir sus productos a los distintos almacenes, mayoristas o minoristas dando el servicio de reparto y/o cobranza",
+        color: CardColor.WHITE
+    }
+]
