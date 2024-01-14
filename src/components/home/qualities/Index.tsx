@@ -1,29 +1,9 @@
-import { Card, CardColor, CardProps } from "@/components/card/Index"
-
-const qualities: CardProps[] = [
-    {
-        image: "/images/home/reloj.png",
-        title: "Puntualidad",
-        description: "Valoramos la disciplina de la puntualidad a través del cumplimiento a tiempo de nuestros compromisos adquiridos con nuestros clientes",
-        color: CardColor.WHITE
-    },
-    {
-        image: "/images/home/balanza.png",
-        title: "Honestidad",
-        description: "Pilar básico que destacamos a través de la confianza y confiabilidad de nuestro servicio, así como la comunicación clara y directa con nuestros clientes",
-        color: CardColor.GREEN
-    },
-    {
-        image: "/images/home/handshake.png",
-        title: "Responsabilidad",
-        description: "Cumplimos con responsabilidad nuestros compromisos a través de la conducta, eficiencia, transparencia y legalidad de nuestra atención",
-        color: CardColor.WHITE
-    }
-]
+import { Card } from "@/components/card/Index"
+import { qualities } from "@/constants/constants"
 
 export const Qualities = () => {
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 py-12 container mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 container mx-auto md:-mt-16 z-20 relative">
             {
                 qualities.map((quality, index) => (
                     <Card key={index} {...quality} />

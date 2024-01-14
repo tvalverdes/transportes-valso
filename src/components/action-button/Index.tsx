@@ -1,10 +1,6 @@
 import Link from "next/link"
 import './styles.css'
-
-type ActionButtonProps = {
-    text: string
-    url: string
-}
+import { ActionButtonProps } from "@/types/types"
 
 export const ActionButton = ({ text, url }: ActionButtonProps) => {
     return (

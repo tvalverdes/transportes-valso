@@ -1,16 +1,5 @@
+import { CardProps } from "@/types/types"
 import Image from "next/image"
-
-export type CardProps = {
-    image: string
-    title: string
-    description: string
-    color: CardColor
-}
-
-export enum CardColor {
-    GREEN = "bg-primary text-white",
-    WHITE = "bg-white text-black"
-}
 
 export const Card = ({ image, title, description, color }: CardProps) => {
     return (

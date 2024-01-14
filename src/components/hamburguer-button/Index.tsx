@@ -1,8 +1,7 @@
+import { HamburguerButtonProps } from '@/types/types'
 import './styles.css'
 
-type HamburguerButtonProps = {
-    method: VoidFunction
-}
+
 
 export const HamburguerButton = ({ method }: HamburguerButtonProps) => {
     return (

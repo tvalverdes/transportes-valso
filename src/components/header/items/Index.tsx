@@ -1,13 +1,7 @@
 import { ActionButton } from "@/components/action-button/Index";
-import { HTMLProps } from "react";
+import { ItemsType } from "@/types/types";
 
-type Items = {
-    name: string
-    url: string
-    style?: HTMLProps<HTMLElement>["className"];
-}
-
-const items: Items[] = [
+const items: ItemsType[] = [
     { name: 'Nosotros', url: '/nosotros' },
     { name: 'Servicios', url: '/servicios' },
     { name: 'FAQ', url: '/faq' },
