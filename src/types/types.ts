@@ -9,13 +9,10 @@ export type CardProps = {
     image: string
     title: string
     description: string
-    color: CardColor
+    color: Color
 }
 
-export enum CardColor {
-    GREEN = "bg-primary text-white",
-    WHITE = "bg-white text-black"
-}
+type Color = "GREEN" | "WHITE"
 
 export type GoalsProps = {
     image: string,
