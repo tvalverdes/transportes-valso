@@ -1,3 +1,4 @@
+import { Clients } from '@/components/clients/Index'
 import { Header } from '@/components/header/Index'
 import { About } from '@/components/home/about/Index'
 import { Faq } from '@/components/home/faq/Index'
@@ -16,6 +17,7 @@ export default function Home() {
       <Services />
       <Faq />
       <WorkWithUs />
+      <Clients />
     </>
   )
 }

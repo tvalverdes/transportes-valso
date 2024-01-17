@@ -1,4 +1,4 @@
-import { CardProps, GoalsProps } from "@/types/types"
+import { CardProps, Clients, GoalsProps } from "@/types/types"
 
 export const companyData = {
     sectionName: "SOBRE NOSOTROS",
@@ -65,3 +65,35 @@ export const serviceFeatures = ["SOAT Comercial", "Revisión Técnica", "Tarjeta
     "Tarjeta de propiedad", "Equipamiento: botiquín, conos, tacos, extintor, malla, etc."]
 
 export const serviceIncludes = "Además de lo mencionado, incluye la construcción e implementación gratuita de un software para la gestión y control del transporte y/o carga de su negocio, automatizando la programación, tarifario, ejecución, manifiesto digital, aprobación y liquidación de servicios a proveedores."
+
+const clientPhotosUrl = "/images/home/clients"
+export const clients: Clients[] = [
+    {
+        name: "Marinasol",
+        image: `${clientPhotosUrl}/marinasol.webp`
+    },
+    {
+        name: "Corporación Soriano",
+        image: `${clientPhotosUrl}/corporacion-soriano.webp`
+    },
+    {
+        name: "Inversiones Nashimat",
+        image: `${clientPhotosUrl}/nashimat.webp`
+    },
+    {
+        name: "Hass Perú",
+        image: `${clientPhotosUrl}/hassperu.webp`
+    },
+    {
+        name: "Agrícola Cerro Prieto",
+        image: `${clientPhotosUrl}/acp.webp`
+    },
+    {
+        name: "Agrícola Copacabana",
+        image: `${clientPhotosUrl}/agricola-copacabana.webp`
+    },
+    {
+        name: "Mar Store",
+        image: `${clientPhotosUrl}/marstore.webp`
+    },
+]

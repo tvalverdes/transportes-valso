@@ -35,3 +35,8 @@ export type SectionDataProps = {
     title: string
     description?: string
 }
+
+export type Clients = {
+    name: string
+    image: string
+}

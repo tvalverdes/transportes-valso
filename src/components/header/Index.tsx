@@ -21,7 +21,7 @@ export const Header = () => {
                     <Items />
                 </ul>
                 {/*Modify scroll*/}
-                <ul className={`${showMenu ? 'flex' : 'hidden'} fixed flex-col gap-8 items-center justify-end z-40 top-0 bg-white w-full px-1 h-full`}>
+                <ul className={`${showMenu ? 'flex' : 'hidden'} fixed flex-col gap-8 items-center justify-center z-40 top-0 bg-white w-full px-1 h-full`}>
                     <Items />
                 </ul>
                 <div className="flex md:hidden absolute z-50 right-0">
