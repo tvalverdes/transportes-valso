@@ -1,4 +1,4 @@
-import { SectionData } from "../section-data/Index"
+import { SectionData } from "../../section-data/Index"
 import { ClientList } from "./client-list/Index"
 
 export const Clients = () => {

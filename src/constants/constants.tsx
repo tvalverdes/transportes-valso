@@ -1,9 +1,17 @@
-import { CardProps, Clients, GoalsProps } from "@/types/types"
+import { CardProps, Clients, CompanyData, Contact, GoalsProps } from "@/types/types"
 
-export const companyData = {
+const contactData: Contact = {
+    address: "Calle Víctor Fajardo 491 Urb. Santa María 5ta Etapa",
+    phone: "933 531 443",
+    email: "contacto@transportesvalso.com"
+}
+
+export const companyData: CompanyData = {
     sectionName: "SOBRE NOSOTROS",
     title: "Transporte de carga Eficiente y Confiable",
-    description: "Somos una compañía dedicada al servicio logístico de transporte de carga y personal, con soluciones que van de acuerdo a sus requerimientos."
+    description: "Somos una compañía dedicada al servicio logístico de transporte de carga y personal, con soluciones que van de acuerdo a sus requerimientos.",
+    contactData: contactData,
+    schedule: ["Lunes a Viernes: 9:00 am - 6:00 pm", "Sábado: 9:00 am - 1:00 pm"]
 }
 
 export const goalsData: GoalsProps[] = [

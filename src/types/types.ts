@@ -5,6 +5,20 @@ export type ActionButtonProps = {
     url: string
 }
 
+export type Contact = {
+    address: string
+    phone: string
+    email: string
+}
+
+export type CompanyData = {
+    sectionName: string
+    title: string
+    description: string
+    contactData: Contact
+    schedule: string[]
+}
+
 export type CardProps = {
     image: string
     title: string

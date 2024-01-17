@@ -19,7 +19,7 @@ const config: Config = {
       },
       colors: {
         primary: "#05b772",
-        understate: "#6b7280"
+        understate: "#9A9FA9"
       }
     },
   },
