@@ -1,6 +1,6 @@
 import { companyData } from "@/constants/constants"
 
-export const ContactInfoList = () => {
+export const ContactInfo = () => {
     return (
         <>
             <li>{companyData.contactData.address}</li>

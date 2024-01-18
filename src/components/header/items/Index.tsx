@@ -1,5 +1,6 @@
 import { ActionButton } from "@/components/action-button/Index";
 import { ItemsType } from "@/types/types";
+import { usePathname } from "next/navigation";
 
 const items: ItemsType[] = [
     { name: 'Nosotros', url: '/nosotros' },
@@ -11,11 +12,12 @@ const items: ItemsType[] = [
 ]
 
 export const Items = () => {
+    const path = usePathname()
     return (
         <>
             {
                 items.map(item => (
-                    <li key={item.name} className="text-black text-xl"><a className={item.style} href={item.url}>{item.name}</a></li>
+                    <li key={item.name} className={`${path == item.url ? 'text-primary' : 'text-dark'} text-xl menu__link`}><a className={item.style} href={item.url}>{item.name}</a></li>
                 ))
             }
             <li><ActionButton text="Trabaja con nosotros" url="/trabaja-con-nosotros" /></li>

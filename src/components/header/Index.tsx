@@ -4,6 +4,7 @@ import { HeaderInfo } from "./info/Index"
 import { useState } from "react"
 import { HamburguerButton } from "../hamburguer-button/Index"
 import { Items } from "./items/Index"
+import Link from "next/link"
 
 export const Header = () => {
     const [showMenu, setShowMenu] = useState(false)
@@ -16,7 +17,9 @@ export const Header = () => {
         <header>
             <HeaderInfo />
             <div className="container mx-auto flex justify-between items-center py-4 relative">
-                <Image quality={100} priority width={130} height={80} src="/logo.webp" alt="logo" aria-hidden="true" />
+                <Link href='/'>
+                    <Image quality={100} priority width={130} height={80} src="/logo.webp" alt="logo" aria-hidden="true" />
+                </Link>
                 <ul className="hidden md:flex gap-4 items-center">
                     <Items />
                 </ul>

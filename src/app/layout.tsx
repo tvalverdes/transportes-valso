@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Signika } from 'next/font/google'
 import './globals.css'
+import { Header } from '@/components/header/Index'
+import { Footer } from '@/components/footer/Index'
 
 const inter = Signika({ subsets: ["latin"] })
 
@@ -15,8 +17,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="es">
+      <body className={inter.className}>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   )
 }
