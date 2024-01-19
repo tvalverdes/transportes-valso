@@ -5,7 +5,7 @@ import { ActionButtonProps } from "@/types/types"
 export const ActionButton = ({ text, url }: ActionButtonProps) => {
     return (
         <>
-            <Link href={url} className="btn">{text}</Link>
+            <Link href={url} className="btn text-center">{text}</Link>
         </>
     )
 }

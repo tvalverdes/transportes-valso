@@ -1,11 +1,15 @@
 import { companyData } from "@/constants/constants"
 
 export const ContactInfo = () => {
+
     return (
         <>
-            <li>{companyData.contactData.address}</li>
-            <li>{companyData.contactData.phone}</li>
-            <li><a href={`mailto:${companyData.contactData.email}`}>{companyData.contactData.email}</a></li>
+            {companyData.contactData.map((contact, index) => (
+                <li key={index}>{
+                    contact.name === "Correo" ?
+                        (<a className="text-wrap" href={`mailto:${contact.content}`}>{contact.content}</a>) :
+                        contact.content}</li>
+            ))}
         </>
     )
 }

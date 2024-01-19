@@ -6,23 +6,23 @@ export type ActionButtonProps = {
 }
 
 export type Contact = {
-    address: string
-    phone: string
-    email: string
+    name: string
+    content: string
+    icon: string
 }
 
 export type CompanyData = {
     sectionName: string
     title: string
     description: string
-    contactData: Contact
+    contactData: Contact[]
     schedule: string[]
 }
 
 export type CardProps = {
     image: string
     title: string
-    description: string
+    description?: string
     color: Color
 }
 
@@ -53,4 +53,8 @@ export type SectionDataProps = {
 export type Clients = {
     name: string
     image: string
+}
+
+export type ContactCard = Omit<CardProps, "color"> & {
+    button?: ActionButtonProps
 }

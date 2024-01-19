@@ -1,17 +1,30 @@
-import { CardProps, Clients, CompanyData, Contact, GoalsProps } from "@/types/types"
+import { CardProps, Clients, CompanyData, Contact, ContactCard, GoalsProps } from "@/types/types"
+import { getEmail, getPhoneNumber } from "@/utils/contactFormat"
 
-const contactData: Contact = {
-    address: "Calle Víctor Fajardo 491 Urb. Santa María 5ta Etapa",
-    phone: "933 531 443",
-    email: "contacto@transportesvalso.com"
-}
+const contactData: Contact[] = [
+    {
+        name: "Dirección",
+        content: "Calle Víctor Fajardo 491 Urb. Santa María 5ta Etapa",
+        icon: "/icons/location.svg"
+    },
+    {
+        name: "Teléfono",
+        content: "933 531 443",
+        icon: "/icons/phone.svg"
+    },
+    {
+        name: "Correo",
+        content: "contacto@transportesvalso.com",
+        icon: "/icons/mail.svg"
+    }
+]
 
 export const companyData: CompanyData = {
     sectionName: "SOBRE NOSOTROS",
     title: "Transporte de carga Eficiente y Confiable",
     description: "Somos una compañía dedicada al servicio logístico de transporte de carga y personal, con soluciones que van de acuerdo a sus requerimientos.",
     contactData: contactData,
-    schedule: ["Lunes a Viernes: 9:00 am - 6:00 pm", "Sábado: 9:00 am - 1:00 pm"]
+    schedule: ["L - V: 9 am - 6 pm", " S: 9 am - 1 pm"]
 }
 
 export const goalsData: GoalsProps[] = [
@@ -104,4 +117,30 @@ export const clients: Clients[] = [
         name: "Mar Store",
         image: `${clientPhotosUrl}/marstore.webp`
     },
+]
+
+export const contactCards: ContactCard[] = [
+    {
+        title: "Llámanos",
+        description: "Comunícate con nosotros al número: " + getPhoneNumber(),
+        image: "/icons/phone.svg"
+    },
+    {
+        title: "Chat en vivo",
+        description: "Estamos disponibles los " + companyData.schedule,
+        image: "/icons/chat.svg",
+        button: {
+            text: "Iniciar chat",
+            url: `https://api.whatsapp.com/send?phone=51${getPhoneNumber()}&text=Hola,%20quisiera%20saber%20más%20sobre%20sus%20servicios`
+        }
+    },
+    {
+        title: "¿Tienes alguna duda?",
+        description: "Comunícate con nosotros a través de nuestro correo",
+        image: "/icons/mail.svg",
+        button: {
+            text: "Enviar correo",
+            url: `mailto:${getEmail()}`
+        }
+    }
 ]
