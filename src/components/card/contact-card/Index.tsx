@@ -3,7 +3,7 @@ import { ContactCard as ContactProps } from "@/types/types"
 
 export const ContactCard = ({ ...data }: ContactProps) => {
     return (
-        <div className="h-auto min-h-56 w-full max-w-80 bg-understate bg-opacity-60 relative rounded-lg">
+        <div className="h-auto min-h-56 w-full max-w-80 bg-understate bg-opacity-40 relative rounded-lg">
             <div className="bg-primary h-fit p-1 absolute -top-2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full">
                 <img className="w-12" src={data.image} alt="Teléfono" />
             </div>

@@ -20,6 +20,16 @@
     opacity: 0.65;
 }
 
+.faded {
+    border-image: fill 0 linear-gradient(#0001, #000);
+    background-size: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+.faded:hover {
+    background-size: 110%;
+}
+
 .footer {
     background-color: #1d222a;
 }

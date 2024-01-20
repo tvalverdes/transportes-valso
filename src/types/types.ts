@@ -58,3 +58,9 @@ export type Clients = {
 export type ContactCard = Omit<CardProps, "color"> & {
     button?: ActionButtonProps
 }
+
+export type WorkCard = {
+    image: string
+    title: string
+    button: ActionButtonProps
+}

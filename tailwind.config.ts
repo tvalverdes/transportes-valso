@@ -16,6 +16,8 @@ const config: Config = {
         'services-image': "url('../../public/images/home/descargar-material.webp');",
         'work-image': "url('../../public/images/home/work-with-us.webp');",
         'work-mobile-image': "url('../../public/images/home/work-with-us-mobile.webp');",
+        'work-truck-image': "url('../../public/images/work/trabajar-camion.webp');",
+        'work-driver-image': "url('../../public/images/work/chofer.webp');",
       },
       colors: {
         primary: "#05b772",

@@ -1,4 +1,4 @@
-import { CardProps, Clients, CompanyData, Contact, ContactCard, GoalsProps } from "@/types/types"
+import { CardProps, Clients, CompanyData, Contact, ContactCard, GoalsProps, WorkCard } from "@/types/types"
 import { getEmail, getPhoneNumber } from "@/utils/contactFormat"
 
 const contactData: Contact[] = [
@@ -144,3 +144,22 @@ export const contactCards: ContactCard[] = [
         }
     }
 ]
+
+export const workCardData: WorkCard[] = [
+    {
+        image: "/trabajar-camion.webp",
+        title: "Quieres que tu unidad trabaje por ti. ¡Regístrala!",
+        button: {
+            text: "Registrar unidad",
+            url: "/trabaja-con-nosotros/registrar-unidad"
+        }
+    },
+    {
+        image: "/chofer.webp",
+        title: "Te gustaría trabajar como conductor, ¡Postula!",
+        button: {
+            text: "Registrarme",
+            url: "/trabaja-con-nosotros"
+        }
+    }
+] 

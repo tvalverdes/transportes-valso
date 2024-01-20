@@ -14,7 +14,7 @@ export const Header = () => {
     }
 
     return (
-        <header>
+        <header className="shadow shadow-slate-50">
             <HeaderInfo />
             <div className="container mx-auto flex justify-between items-center py-4 relative">
                 <Link href='/'>
