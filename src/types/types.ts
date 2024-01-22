@@ -1,4 +1,5 @@
 import { HTMLProps } from "react"
+import { Control, FieldError, UseFormRegister } from "react-hook-form"
 
 export type ActionButtonProps = {
     text: string
@@ -64,3 +65,41 @@ export type WorkCard = {
     title: string
     button: ActionButtonProps
 }
+
+export type TruckValidFieldNames =
+    | "name"
+    | "documentType"
+    | "documentNumber"
+    | "driversLicenseType"
+    | "phone";
+
+export type FormData = {
+    name: string;
+    documentType: string;
+    documentNumber: string;
+    driversLicenseType: string;
+    phone: string;
+};
+
+export type FormFieldProps = {
+    type: string;
+    placeholder: string;
+    name: TruckValidFieldNames;
+    register: UseFormRegister<FormData>;
+    error: FieldError | undefined;
+    valueAsNumber?: boolean;
+    required?: boolean;
+};
+
+export type FormSelectProps = Omit<FormFieldProps, "type" | "valueAsNumber">
+
+export type FormDropdownProps = {
+    name: TruckValidFieldNames
+    error: FieldError | undefined
+    placeholder: string
+    control: Control<FormData>
+}
+
+export type FormAutocompleteProps = FormDropdownProps & {
+    options: string[]
+};

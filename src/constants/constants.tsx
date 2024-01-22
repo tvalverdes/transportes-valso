@@ -162,4 +162,32 @@ export const workCardData: WorkCard[] = [
             url: "/trabaja-con-nosotros"
         }
     }
-] 
+]
+
+export const driversLicenseType =
+    [
+        "A-I", "B-1", "A-IIa", "B-IIa", "A-IIb", "B-IIb", "B-IIc", "A-IIIa", "A-IIIb", "A-IIIc"
+    ]
+
+/*  export const driversLicenseType =
+ [
+     { label: "A-I" },
+     { label: "B-I" },
+     { label: "A-IIa" },
+     { label: "B-IIa" },
+     { label: "A-IIb" },
+     { label: "B-IIb" },
+     { label: "B-IIc" },
+     { label: "A-IIIa" },
+     { label: "A-IIIb" },
+     { label: "A-IIIc" }
+ ] */
+
+export const documentType = [
+    {
+        label: "DNI"
+    },
+    {
+        label: "CE"
+    }
+]

@@ -1,11 +1,12 @@
-import { Input } from "@/components/input/Index"
+'use client'
+
+import { Form } from "@/components/form/Index"
 
 const RegistrarUnidad = () => {
     return (
-        <div>
-            <h1>Registrar Unidad</h1>
-            <Input />
-        </div>
+        <main className="container mx-auto px-1 flex justify-center">
+            <Form />
+        </main>
     )
 }
 
