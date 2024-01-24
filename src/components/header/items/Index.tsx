@@ -1,4 +1,4 @@
-import { ActionButton } from "@/components/action-button/Index";
+import { ActionButton } from "@/components/ActionButton/Index";
 import { ItemsType } from "@/types/types";
 import { usePathname } from "next/navigation";
 

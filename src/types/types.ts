@@ -73,7 +73,7 @@ export type TruckValidFieldNames =
     | "driversLicenseType"
     | "phone";
 
-export type FormData = {
+export type FormPersonalData = {
     name: string;
     documentType: string;
     documentNumber: string;
@@ -81,25 +81,70 @@ export type FormData = {
     phone: string;
 };
 
+export type VehicleValidFieldNames =
+    | "location"
+    | "brand"
+    | "is4x4"
+    | "model"
+    | "fabricationYear"
+    | "vehicleType"
+    | "comment"
+    | "vehicleImage"
+
+export type FormVehicleData = {
+    location: string
+    brand: string
+    is4x4: boolean
+    model: string
+    fabricationYear: number
+    vehicleType: string
+    comment?: string
+    vehicleImage?: FileList
+}
+
 export type FormFieldProps = {
     type: string;
     placeholder: string;
-    name: TruckValidFieldNames;
-    register: UseFormRegister<FormData>;
+    name: TruckValidFieldNames | VehicleValidFieldNames;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    register: UseFormRegister<any>; //UseFormRegister<FormPersonalData | FormVehicleData>
     error: FieldError | undefined;
-    valueAsNumber?: boolean;
     required?: boolean;
 };
 
-export type FormSelectProps = Omit<FormFieldProps, "type" | "valueAsNumber">
+export type VehicleFullForm = {
+    personalData: FormPersonalData
+    vehicleData: FormVehicleData
+}
+
+export type FormFIleProps = Pick<FormFieldProps, "register" | "name" | "error">
+
+export type FormTextAreaProps = Omit<FormFieldProps, "type" | "error">;
+
+export type FormSelectProps = Omit<FormFieldProps, "type"> & {
+    options: string[];
+};
 
 export type FormDropdownProps = {
-    name: TruckValidFieldNames
+    name: TruckValidFieldNames | VehicleValidFieldNames
     error: FieldError | undefined
     placeholder: string
-    control: Control<FormData>
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    control: Control<any>
 }
 
 export type FormAutocompleteProps = FormDropdownProps & {
     options: string[]
 };
+
+export type SubmitButtonProps = {
+    onClick?: VoidFunction
+    color: "primary" | "understate"
+    text: string
+}
+
+export type VehicleDataTypes = "personalData" | "vehicleData"
+
+export type OnDataChange = {
+    onDataChange: (parent: VehicleDataTypes, data: FormPersonalData | FormVehicleData) => void
+}

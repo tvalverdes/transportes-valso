@@ -1,10 +1,12 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { z } from 'zod'
-import { FormField } from "../form-field/Index";
-import { FormSelect } from "../form-select/Index";
-import { FormAutocomplete } from "../formAutocomplete/Index";
+import { FormField } from "../../FormInputs/FormField/Index";
+import { FormSelect } from "../../FormInputs/FormSelect/Index";
+import { FormAutocomplete } from "../../FormInputs/FormAutocomplete/Index";
 import { documentType, driversLicenseType } from "@/constants/constants";
+import { SubmitButton } from '../../SubmitButton/Index';
+import { OnDataChange } from "@/types/types";
 
 const schema = z.object({
     name: z.string().trim()
@@ -27,11 +29,13 @@ const schema = z.object({
 
 type FormFields = z.infer<typeof schema>
 
-export const Form = () => {
+export const PersonalDataForm: React.FC<OnDataChange> = ({
+    onDataChange
+}) => {
     const { register, handleSubmit, formState: { errors }, control } = useForm<FormFields>({
         defaultValues: {
             name: '',
-            documentType: documentType[0].label,
+            documentType: documentType[0],
             documentNumber: '',
             driversLicenseType: driversLicenseType[0],
             phone: ''
@@ -40,15 +44,14 @@ export const Form = () => {
     })
 
     const onSubmit: SubmitHandler<FormFields> = (data) => {
-        console.log(data)
-
+        onDataChange("personalData", data)
     }
     return (
-        <form className="flex flex-col gap-4 w-full max-w-96 my-12 p-2 md:p-6 " onSubmit={handleSubmit(onSubmit)}>
+        <form className="flex flex-col gap-4 my-8" onSubmit={handleSubmit(onSubmit)}>
             <FormField name="name" placeholder="Nombre" register={register} type="text" error={errors.name} />
             <div className="flex flex-col sm:flex-row gap-2">
                 <div className="flex flex-col gap-4 basis-2/5">
-                    <FormSelect name="documentType" register={register} placeholder="Tipo de documento" error={errors.documentType} />
+                    <FormSelect name="documentType" options={documentType} register={register} placeholder="Tipo de documento" error={errors.documentType} />
                     <FormAutocomplete name="driversLicenseType" control={control} options={driversLicenseType} placeholder="Tipo de licencia" error={errors.driversLicenseType} />
                 </div>
                 <div className="flex flex-col gap-4 basis-3/5">
@@ -56,9 +59,7 @@ export const Form = () => {
                     <FormField name="phone" placeholder="Teléfono" register={register} type="tel" error={errors.phone} />
                 </div>
             </div>
-            <button type="submit">
-                click
-            </button>
+            <SubmitButton color="understate" text="CONTINUAR" />
         </form>
     )
 }

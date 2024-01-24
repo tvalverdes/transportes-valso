@@ -1,4 +1,4 @@
-import { ActionButton } from "@/components/action-button/Index"
+import { ActionButton } from "@/components/ActionButton/Index"
 import { SectionData } from "@/components/section-data/Index"
 
 export const WorkWithUs = () => {

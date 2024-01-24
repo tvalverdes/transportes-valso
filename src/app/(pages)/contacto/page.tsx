@@ -1,5 +1,5 @@
 
-import { ContactCard } from '@/components/card/contact-card/Index'
+import { ContactCard } from '@/components/card/ContactCard/Index'
 import { contactCards } from '@/constants/constants'
 import { Metadata } from 'next'
 

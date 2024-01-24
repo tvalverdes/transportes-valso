@@ -1,4 +1,4 @@
-import { CardProps, Clients, CompanyData, Contact, ContactCard, GoalsProps, WorkCard } from "@/types/types"
+import { CardProps, Clients, CompanyData, Contact, ContactCard, FormPersonalData, FormVehicleData, GoalsProps, WorkCard } from "@/types/types"
 import { getEmail, getPhoneNumber } from "@/utils/contactFormat"
 
 const contactData: Contact[] = [
@@ -169,25 +169,33 @@ export const driversLicenseType =
         "A-I", "B-1", "A-IIa", "B-IIa", "A-IIb", "B-IIb", "B-IIc", "A-IIIa", "A-IIIb", "A-IIIc"
     ]
 
-/*  export const driversLicenseType =
- [
-     { label: "A-I" },
-     { label: "B-I" },
-     { label: "A-IIa" },
-     { label: "B-IIa" },
-     { label: "A-IIb" },
-     { label: "B-IIb" },
-     { label: "B-IIc" },
-     { label: "A-IIIa" },
-     { label: "A-IIIb" },
-     { label: "A-IIIc" }
- ] */
+export const provinces = [
+    "Lima", "La Libertad", "Arequipa", "Ancash", "Amazonas", "Apurímac", "Ayacucho", "Cajamarca", "Cusco", "Huancavelica", "Ica", "Junín", "Lambayeque", "Loreto", "Madre de Dios", "Moquegua", "Pasco", "Piura", "Puno", "San Martín", "Tacna", "Tumbes", "Ucayali"
+]
+
+export const vehicleType = [
+    "Bus", "Furgón/Furgoneta", "Van/Minivan", "Camión", "Trailer"
+]
 
 export const documentType = [
-    {
-        label: "DNI"
-    },
-    {
-        label: "CE"
-    }
+    "DNI", "CE"
 ]
+
+export const imageAcceptedFileTypes = ["image/png", "image/jpg"]
+
+export const defaultPersonalData: FormPersonalData = {
+    documentNumber: '',
+    documentType: '',
+    driversLicenseType: '',
+    name: '',
+    phone: '',
+}
+export const defaultVehicleData: FormVehicleData = {
+    brand: '',
+    comment: '',
+    fabricationYear: 2016,
+    is4x4: false,
+    location: '',
+    model: '',
+    vehicleType: '',
+}

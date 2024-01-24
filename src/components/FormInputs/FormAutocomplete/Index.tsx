@@ -2,14 +2,6 @@ import { FormAutocompleteProps } from "@/types/types";
 import { Controller } from "react-hook-form";
 import { Autocomplete, TextField } from "@mui/material";
 
-export const top5Films = [
-    { label: "The Shawshank Redemption", year: 1994 },
-    { label: "The Godfather", year: 1972 },
-    { label: "The Godfather: Part II", year: 1974 },
-    { label: "The Dark Knight", year: 2008 },
-    { label: "12 Angry Men", year: 1957 },
-];
-
 export const FormAutocomplete: React.FC<FormAutocompleteProps> = ({
     name,
     control,
@@ -26,7 +18,7 @@ export const FormAutocomplete: React.FC<FormAutocompleteProps> = ({
                     <>
                         <Autocomplete disablePortal disableClearable onChange={(event, item) => {
                             onChange(item);
-                        }} value={value ?? "A-I"}
+                        }} value={value ?? options[0]}
                             options={options}
                             isOptionEqualToValue={(option, value) => option === value}
                             renderInput={(params) => <TextField required {...params} label={placeholder} helperText={error?.message} error={!!error?.message} />} />

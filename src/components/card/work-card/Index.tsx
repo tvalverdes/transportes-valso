@@ -1,5 +1,5 @@
 import { WorkCard as WorkCardProps } from '@/types/types';
-import { ActionButton } from '../../action-button/Index';
+import { ActionButton } from '../../ActionButton/Index';
 export const WorkCard = ({ ...data }: WorkCardProps) => {
 
     return (

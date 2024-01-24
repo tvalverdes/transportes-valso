@@ -1,10 +1,12 @@
 import type { Metadata } from 'next'
-import { Signika } from 'next/font/google'
+import { Signika, Roboto } from 'next/font/google'
 import './globals.css'
 import { Header } from '@/components/header/Index'
-import { Footer } from '@/components/footer/Index'
+import { Footer } from '@/components/Footer/Index'
 
-const inter = Signika({ subsets: ["latin"] })
+const signika = Signika({ subsets: ["latin"] })
+
+const roboto = Roboto({ subsets: ["latin"], weight: "400", variable: "--font-roboto", })
 
 export const metadata: Metadata = {
   title: 'Transportes Valso',
@@ -18,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className={inter.className}>
+      <body className={`${signika.className} ${roboto.variable}`}>
         <Header />
         {children}
         <Footer />
