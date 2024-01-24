@@ -2,27 +2,15 @@
 
 /* import { PersonalDataForm } from "@/components/Forms/PersonalDataForm/Index" */
 import { VehicleDataForm } from "@/components/Forms/VehicleDataForm/Index"
-import { FormPersonalData, FormVehicleData, VehicleDataTypes, VehicleFullForm } from "@/types/types"
-import { useState } from "react"
-import { defaultPersonalData, defaultVehicleData } from '../../../../constants/constants';
 import { PersonalDataForm } from "@/components/Forms/PersonalDataForm/Index";
+import { useFormNumberState } from "@/store/useStore";
 
 const RegistrarUnidad = () => {
 
-    const [formData, setFormData] = useState<VehicleFullForm>(
-        {
-            personalData: {
-                ...defaultPersonalData
-            },
-            vehicleData: {
-                ...defaultVehicleData
-            }
-        }
-    )
+    /* const [formData, setFormData] = useState<VehicleFullForm>(initialData) */
+    const { count } = useFormNumberState();
 
-    const [isFormNumber, setIsFormNumber] = useState(1)
-
-    const handleChangeData = (parent: VehicleDataTypes, data: FormPersonalData | FormVehicleData) => {
+    /* const handleChangeData = (parent: VehicleDataTypes, data: FormPersonalData | FormVehicleData) => {
         setFormData((previousData) => ({
             ...previousData,
             [parent]: {
@@ -30,7 +18,7 @@ const RegistrarUnidad = () => {
             }
         }))
         console.log(formData)
-    }
+    } */
 
     return (
         <main className="bg-understate bg-opacity-80 container mx-auto px-1 flex justify-center">
@@ -38,11 +26,11 @@ const RegistrarUnidad = () => {
                 <h2 className="text-primary text-xl">Registro de vehículo</h2>
                 <h3 className="text-understate text-md pt-2">Ingresa tus datos personales</h3>
                 {
-                    isFormNumber === 1 ? <PersonalDataForm onDataChange={handleChangeData} /> :
-                    <VehicleDataForm onDataChange={handleChangeData} />
+                    count === 0 ? <PersonalDataForm /> :
+                        <VehicleDataForm />
                 }
-                
-                
+
+
             </div>
         </main>
     )

@@ -6,52 +6,33 @@ import { FormSelect } from "../../FormInputs/FormSelect/Index";
 import { FormAutocomplete } from "../../FormInputs/FormAutocomplete/Index";
 import { documentType, driversLicenseType } from "@/constants/constants";
 import { SubmitButton } from '../../SubmitButton/Index';
-import { OnDataChange } from "@/types/types";
+import { rentVehicleDataState, useFormNumberState } from "@/store/useStore";
+import { personalDataSchema } from "@/schema/schemas";
 
-const schema = z.object({
-    name: z.string().trim()
-        .min(3, { message: 'El nombre debe tener al menos 3 caracteres' })
-        .refine(data => /^[A-Za-z\s]+$/u.test(data), {
-            message: 'Este campo solo debe contener letras',
-        }),
-    documentType: z.string().trim()
-        .toUpperCase()
-        .regex(/^(DNI|CE)$/, { message: 'El tipo de documento no es válido' }),
-    documentNumber: z.string().trim(),
-    driversLicenseType: z.string().trim().min(1, { message: 'Elige tu tipo de licencia' }),
-    phone: z.string().trim().refine(data => /^\d{9}$/.test(data), {
-        message: 'El teléfono debe tener 9 números',
-    }),
-}).refine(data => data.documentType === 'DNI' ? /^\d{8}$/.test(data.documentNumber) : /^\d{12}$/.test(data.documentNumber), {
-    message: 'El número de documento no es válido para el tipo de documento seleccionado',
-    path: ['documentNumber'],
-})
+type FormFields = z.infer<typeof personalDataSchema>
 
-type FormFields = z.infer<typeof schema>
-
-export const PersonalDataForm: React.FC<OnDataChange> = ({
-    onDataChange
-}) => {
+export const PersonalDataForm = () => {
+    const { data, setPersonalData } = rentVehicleDataState();
     const { register, handleSubmit, formState: { errors }, control } = useForm<FormFields>({
         defaultValues: {
-            name: '',
-            documentType: documentType[0],
-            documentNumber: '',
-            driversLicenseType: driversLicenseType[0],
-            phone: ''
+            ...data.personalData
         },
-        resolver: zodResolver(schema)
+        resolver: zodResolver(personalDataSchema)
     })
 
+    const { goToNextForm } = useFormNumberState();
+
     const onSubmit: SubmitHandler<FormFields> = (data) => {
-        onDataChange("personalData", data)
+        setPersonalData(data)
+        console.log(data)
+        goToNextForm()
     }
     return (
         <form className="flex flex-col gap-4 my-8" onSubmit={handleSubmit(onSubmit)}>
             <FormField name="name" placeholder="Nombre" register={register} type="text" error={errors.name} />
             <div className="flex flex-col sm:flex-row gap-2">
                 <div className="flex flex-col gap-4 basis-2/5">
-                    <FormSelect name="documentType" options={documentType} register={register} placeholder="Tipo de documento" error={errors.documentType} />
+                    <FormSelect name="documentType" currentValue={data.personalData.documentType}  options={documentType} register={register} placeholder="Tipo de documento" error={errors.documentType} />
                     <FormAutocomplete name="driversLicenseType" control={control} options={driversLicenseType} placeholder="Tipo de licencia" error={errors.driversLicenseType} />
                 </div>
                 <div className="flex flex-col gap-4 basis-3/5">

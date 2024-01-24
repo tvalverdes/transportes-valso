@@ -6,16 +6,17 @@ export const FormSelect: React.FC<FormSelectProps> = ({
     error,
     placeholder,
     register,
-    options
+    options,
+    currentValue
 }) => {
     return (
         <>
             <TextField {...register(name)}
                 error={!!error?.message}
-                select 
+                select
                 label={placeholder}
                 helperText={error?.message}
-                defaultValue={options[0]}
+                defaultValue={currentValue}
                 InputLabelProps={{ shrink: true }}
             >
                 {options.map((item, index) => (

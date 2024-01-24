@@ -122,6 +122,7 @@ export type FormFIleProps = Pick<FormFieldProps, "register" | "name" | "error">
 export type FormTextAreaProps = Omit<FormFieldProps, "type" | "error">;
 
 export type FormSelectProps = Omit<FormFieldProps, "type"> & {
+    currentValue: string
     options: string[];
 };
 
@@ -141,6 +142,7 @@ export type SubmitButtonProps = {
     onClick?: VoidFunction
     color: "primary" | "understate"
     text: string
+    type?: "button" | "submit"
 }
 
 export type VehicleDataTypes = "personalData" | "vehicleData"

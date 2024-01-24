@@ -1,4 +1,4 @@
-import { CardProps, Clients, CompanyData, Contact, ContactCard, FormPersonalData, FormVehicleData, GoalsProps, WorkCard } from "@/types/types"
+import { CardProps, Clients, CompanyData, Contact, ContactCard, GoalsProps, WorkCard } from "@/types/types"
 import { getEmail, getPhoneNumber } from "@/utils/contactFormat"
 
 const contactData: Contact[] = [
@@ -183,19 +183,21 @@ export const documentType = [
 
 export const imageAcceptedFileTypes = ["image/png", "image/jpg"]
 
-export const defaultPersonalData: FormPersonalData = {
-    documentNumber: '',
-    documentType: '',
-    driversLicenseType: '',
-    name: '',
-    phone: '',
-}
-export const defaultVehicleData: FormVehicleData = {
-    brand: '',
-    comment: '',
-    fabricationYear: 2016,
-    is4x4: false,
-    location: '',
-    model: '',
-    vehicleType: '',
+export const initialData = {
+    personalData: {
+        documentNumber: '',
+        documentType: '',
+        driversLicenseType: '',
+        name: '',
+        phone: '',
+    },
+    vehicleData: {
+        brand: '',
+        comment: '',
+        fabricationYear: 2016,
+        is4x4: false,
+        location: '',
+        model: '',
+        vehicleType: '',
+    }
 }
