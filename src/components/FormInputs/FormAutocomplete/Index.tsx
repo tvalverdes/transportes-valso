@@ -1,14 +1,16 @@
 import { FormAutocompleteProps } from "@/types/types";
-import { Controller } from "react-hook-form";
 import { Autocomplete, TextField } from "@mui/material";
+import { Controller } from "react-hook-form";
 
 export const FormAutocomplete: React.FC<FormAutocompleteProps> = ({
     name,
     control,
     options,
     placeholder,
-    error
+    error,
+    onChangeMethod
 }) => {
+
     return (
         <>
             <Controller
@@ -18,6 +20,7 @@ export const FormAutocomplete: React.FC<FormAutocompleteProps> = ({
                     <>
                         <Autocomplete disablePortal disableClearable onChange={(event, item) => {
                             onChange(item);
+                            {onChangeMethod && onChangeMethod(item)}
                         }} value={value ?? options[0]}
                             options={options}
                             isOptionEqualToValue={(option, value) => option === value}

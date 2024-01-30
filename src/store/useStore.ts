@@ -20,13 +20,17 @@ export const rentVehicleDataState = create<VehicleDataState>((set) => ({
         vehicleData: {
             brand: '',
             comment: '',
-            fabricationYear: 2016,
+            fabricationYear: "2016",
             is4x4: false,
             location: '',
             model: '',
             vehicleType: '',
+            numberOfSeats: '',
+            tons: '',
+            type: '',
         }
     },
     setPersonalData: (data) => set((state) => ({ data: { ...state.data, personalData: data } })),
     setVehicleData: (data) => set((state) => ({ data: { ...state.data, vehicleData: data } })),
+    setVehicleType: (data) => set((state) => ({ data: { ...state.data, vehicleData: { ...state.data.vehicleData, vehicleType: data } } })),
 }))

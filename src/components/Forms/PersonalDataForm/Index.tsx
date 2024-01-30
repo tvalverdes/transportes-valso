@@ -24,7 +24,6 @@ export const PersonalDataForm = () => {
 
     const onSubmit: SubmitHandler<FormFields> = (data) => {
         setPersonalData(data)
-        console.log(data)
         goToNextForm()
     }
     return (
@@ -32,7 +31,7 @@ export const PersonalDataForm = () => {
             <FormField name="name" placeholder="Nombre" register={register} type="text" error={errors.name} />
             <div className="flex flex-col sm:flex-row gap-2">
                 <div className="flex flex-col gap-4 basis-2/5">
-                    <FormSelect name="documentType" currentValue={data.personalData.documentType}  options={documentType} register={register} placeholder="Tipo de documento" error={errors.documentType} />
+                    <FormSelect name="documentType" currentValue={data.personalData.documentType} options={documentType} register={register} placeholder="Tipo de documento" error={errors.documentType} />
                     <FormAutocomplete name="driversLicenseType" control={control} options={driversLicenseType} placeholder="Tipo de licencia" error={errors.driversLicenseType} />
                 </div>
                 <div className="flex flex-col gap-4 basis-3/5">
@@ -40,7 +39,7 @@ export const PersonalDataForm = () => {
                     <FormField name="phone" placeholder="Teléfono" register={register} type="tel" error={errors.phone} />
                 </div>
             </div>
-            <SubmitButton color="understate" text="CONTINUAR" />
+            <SubmitButton color="primary" text="CONTINUAR" />
         </form>
     )
 }

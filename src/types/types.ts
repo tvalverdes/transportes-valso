@@ -96,8 +96,11 @@ export type FormVehicleData = {
     brand: string
     is4x4: boolean
     model: string
-    fabricationYear: number
+    fabricationYear: string
     vehicleType: string
+    numberOfSeats?: string
+    tons?: string
+    type?: string
     comment?: string
     vehicleImage?: FileList
 }
@@ -111,6 +114,15 @@ export type FormFieldProps = {
     error: FieldError | undefined;
     required?: boolean;
 };
+
+export type RadioButtonFormat = {
+  value: string
+  label: string
+} 
+export type FormRadioButtonProps = Pick<FormFIleProps, "name"|"register"> & {
+  options: RadioButtonFormat[]
+}
+
 
 export type VehicleFullForm = {
     personalData: FormPersonalData
@@ -136,7 +148,18 @@ export type FormDropdownProps = {
 
 export type FormAutocompleteProps = FormDropdownProps & {
     options: string[]
+    onChangeMethod?: (value: string) => void
 };
+
+export type TruckFeatures = {
+  [vehicle: string]: {
+    numberOfSeats?: string[]
+    tons?: string[]
+    type?: string[]
+  }
+}
+
+
 
 export type SubmitButtonProps = {
     onClick?: VoidFunction

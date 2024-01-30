@@ -11,4 +11,5 @@ export interface VehicleDataState {
     data: VehicleFullForm;
     setPersonalData: (data: FormPersonalData) => void;
     setVehicleData: (data: FormVehicleData) => void;
+    setVehicleType: (data: string) => void;
 }
