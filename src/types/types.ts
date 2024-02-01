@@ -67,7 +67,7 @@ export type WorkCard = {
     button: ActionButtonProps
 }
 
-export type TruckValidFieldNames =
+export type PersonalDataValidFieldNames =
     | "name"
     | "documentType"
     | "documentNumber"
@@ -109,7 +109,7 @@ export type FormVehicleData = {
 export type FormFieldProps = {
     type: string;
     placeholder: string;
-    name: TruckValidFieldNames | VehicleValidFieldNames;
+    name: PersonalDataValidFieldNames | VehicleValidFieldNames;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     register: UseFormRegister<any>; //UseFormRegister<FormPersonalData | FormVehicleData>
     error: FieldError | undefined;
@@ -140,8 +140,8 @@ export type FormSelectProps = Omit<FormFieldProps, "type"> & {
 };
 
 export type FormDropdownProps = {
-    name: TruckValidFieldNames | VehicleValidFieldNames
-    error: FieldError | undefined
+    name: PersonalDataValidFieldNames | VehicleValidFieldNames
+    error?: FieldError | undefined
     placeholder: string
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     control: Control<any>
@@ -160,7 +160,7 @@ export type TruckFeatures = {
   }
 }
 
-
+export type AttributesMap = [VehicleValidFieldNames, string[]]
 
 export type SubmitButtonProps = {
     onClick?: VoidFunction

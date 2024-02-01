@@ -1,6 +1,7 @@
-import { FileUpload } from "@/components/file-upload/Index";
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { FormSelect } from '@/components/FormInputs/FormSelect/Index';
 import { FormTextArea } from "@/components/FormInputs/FormTextArea/Index";
+import { FileUpload } from "@/components/file-upload/Index";
 import { featurePlaceholder, is4x4Data, provinces, vehicleNames } from "@/constants/constants";
 import { vehicleDataSchema } from "@/schema/schemas";
 import { rentVehicleDataState, useFormNumberState } from "@/store/useStore";
@@ -73,7 +74,7 @@ export const VehicleDataForm = () => {
                     onChangeMethod={setVehicleType} />
                 </div>
             </div>
-            {attributes && attributes.map(([key, value]) => (
+            {attributes && attributes.map(([key, value]: any) => (
         <div key={key}>
           <FormAutocomplete 
           control={control}
