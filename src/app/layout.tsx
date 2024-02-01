@@ -1,8 +1,8 @@
-import type { Metadata } from 'next'
-import { Signika, Roboto } from 'next/font/google'
-import './globals.css'
+import { Footer } from '@/components/footer/Index'
 import { Header } from '@/components/header/Index'
-import { Footer } from '@/components/Footer/Index'
+import type { Metadata } from 'next'
+import { Roboto, Signika } from 'next/font/google'
+import './globals.css'
 
 const signika = Signika({ subsets: ["latin"] })
 

@@ -1,9 +1,9 @@
 import { companyData } from "@/constants/constants"
 import Link from "next/link"
-import { FacebookIcon } from "../facebook-icon/Index"
-import { ActionButton } from "../ActionButton/Index"
+import { ActionButton } from "../action-button/Index"
 import { ContactInfo } from "../contact-info/Index"
-import { ScheduleList } from '../schedule-list/Index';
+import { FacebookIcon } from "../facebook-icon/Index"
+import { ScheduleList } from '../schedule-list/Index'
 
 export const Footer = () => {
     return (

@@ -1,4 +1,4 @@
-import { ActionButton } from "@/components/ActionButton/Index"
+import { ActionButton } from "@/components/action-button/Index"
 
 const data = {
     title: "Transporte De Carga Eficiente Y Confiable",

@@ -1,4 +1,4 @@
-import { FileUpload } from "@/components/FileUpload/Index";
+import { FileUpload } from "@/components/file-upload/Index";
 import { FormSelect } from '@/components/FormInputs/FormSelect/Index';
 import { FormTextArea } from "@/components/FormInputs/FormTextArea/Index";
 import { featurePlaceholder, is4x4Data, provinces, vehicleNames } from "@/constants/constants";

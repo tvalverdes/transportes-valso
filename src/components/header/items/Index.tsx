@@ -1,4 +1,4 @@
-import { ActionButton } from "@/components/ActionButton/Index";
+import { ActionButton } from "@/components/action-button/Index";
 import { isMenuShowingState } from '@/store/useStore';
 import { ItemsType } from "@/types/types";
 import Link from 'next/link';

@@ -1,4 +1,4 @@
-import { ActionButton } from "@/components/ActionButton/Index"
+import { ActionButton } from "@/components/action-button/Index"
 import { ContactCard as ContactProps } from "@/types/types"
 
 export const ContactCard = ({ ...data }: ContactProps) => {
