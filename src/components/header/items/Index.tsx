@@ -6,10 +6,10 @@ import { usePathname } from "next/navigation";
 import { Link as ScrollLink } from 'react-scroll';
 
 const items: ItemsType[] = [
-    { name: 'Nosotros', url: '/nosotros', to: 'nosotros'},
-    { name: 'Servicios', url: '/servicios', to: 'servicios'},
-    { name: 'FAQ', url: '/faq', to: 'faq'},
-    { name: 'Clientes', url: '/clientes', to: 'clientes'},
+    { name: 'Nosotros', url: '/', to: 'nosotros'},
+    { name: 'Servicios', url: '/', to: 'servicios'},
+    { name: 'FAQ', url: '/', to: 'faq'},
+    { name: 'Clientes', url: '/', to: 'clientes'},
     { name: 'Contacto', url: '/contacto'},
 ]
 
@@ -19,14 +19,15 @@ export const Items = () => {
       setMenuState(false)
     }
     const path = usePathname()
+
     return (
         <>
             {items.map(item => (
-                <li key={item.name} className={`${path == item.url ? 'text-primary' : 'text-dark'} text-xl menu__link`}>
-                    {item.to ? (
+                <li key={item.name} className={` text-xl menu__link cursor-pointer`}>
+                    {item.to && path == '/'  ? (
                         <ScrollLink to={item.to} spy={true} smooth={true} duration={300} onClick={handleOnClick}>{item.name}</ScrollLink>
                     ) : (
-                        <Link href={item.url} onClick={handleOnClick}>
+                        <Link  className={path == item.url ? 'text-primary' : 'text-dark'} href={item.url} onClick={handleOnClick}>
                             {item.name}
                         </Link>
                     )}
@@ -36,9 +37,3 @@ export const Items = () => {
         </>
     )
 }
-
-/* {
-  items.map(item => (
-      <li key={item.name} className={`${path == item.url ? 'text-primary' : 'text-dark'} text-xl menu__link`}><a onClick={() => setMenuState(false)} className={item.style} href={item.url}>{item.name}</a></li>
-  ))
-} */
