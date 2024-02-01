@@ -36,13 +36,14 @@ export type GoalsProps = {
 }
 
 export type HamburguerButtonProps = {
-    method: VoidFunction
+    method: void;
 }
 
 export type ItemsType = {
     name: string
     url: string
     style?: HTMLProps<HTMLElement>["className"];
+    to?: string
 }
 
 export type SectionDataProps = {
@@ -94,7 +95,7 @@ export type VehicleValidFieldNames =
 export type FormVehicleData = {
     location: string
     brand: string
-    is4x4: boolean
+    is4x4: string
     model: string
     fabricationYear: string
     vehicleType: string

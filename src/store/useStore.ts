@@ -1,11 +1,16 @@
 import { documentType, driversLicenseType } from '@/constants/constants'
-import { FormNumberState, VehicleDataState } from '@/interfaces/interfaces'
+import { FormNumberState, MenuState, VehicleDataState } from '@/interfaces/interfaces'
 import { create } from 'zustand'
 
 export const useFormNumberState = create<FormNumberState>((set) => ({
-    count: 0,
+    count: 1,
     goToNextForm: () => set((state) => ({ count: state.count + 1 })),
     goToPreviousForm: () => set((state) => ({ count: state.count - 1 })),
+}))
+
+export const isMenuShowingState = create<MenuState>((set) => ({
+    isMenuShowing: false,
+    setMenuState: (state) => set({ isMenuShowing: state }),
 }))
 
 export const rentVehicleDataState = create<VehicleDataState>((set) => ({
@@ -21,7 +26,7 @@ export const rentVehicleDataState = create<VehicleDataState>((set) => ({
             brand: '',
             comment: '',
             fabricationYear: "2016",
-            is4x4: false,
+            is4x4: '',
             location: '',
             model: '',
             vehicleType: '',

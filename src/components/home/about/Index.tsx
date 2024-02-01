@@ -5,7 +5,7 @@ import { companyData } from "@/constants/constants"
 
 export const About = () => {
     return (
-        <section className="grid grid-cols-1 lg:grid-cols-2 py-24">
+        <section id='nosotros' className="grid grid-cols-1 lg:grid-cols-2 py-24">
             <div>
                 <img src="/images/home/about.webp" className="w-full" alt="about" />
             </div>

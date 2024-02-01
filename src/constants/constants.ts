@@ -285,6 +285,8 @@ export const documentType = [
   "DNI", "CE"
 ]
 
+export const is4x4Data = [ "Si", "No"]
+
 export const seatNumbers = Array.from({ length: 52 }, (_, i) => i + 9).toString().split(",")
 
 export const imageAcceptedFileTypes = ["image/png", "image/jpg", "image/jpeg"]

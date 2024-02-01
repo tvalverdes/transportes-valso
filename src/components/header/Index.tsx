@@ -1,17 +1,13 @@
 'use client'
+import { isMenuShowingState } from '@/store/useStore'
 import Image from "next/image"
-import { HeaderInfo } from "./info/Index"
-import { useState } from "react"
-import { HamburguerButton } from "../hamburguer-button/Index"
-import { Items } from "./items/Index"
 import Link from "next/link"
+import { HamburguerButton } from "../hamburguer-button/Index"
+import { HeaderInfo } from "./info/Index"
+import { Items } from "./items/Index"
 
 export const Header = () => {
-    const [showMenu, setShowMenu] = useState(false)
-
-    const menuHandler = () => {
-        setShowMenu(!showMenu)
-    }
+    const { isMenuShowing } = isMenuShowingState()
 
     return (
         <header className="shadow shadow-slate-50">
@@ -23,12 +19,11 @@ export const Header = () => {
                 <ul className="hidden md:flex gap-4 items-center">
                     <Items />
                 </ul>
-                {/*Modify scroll*/}
-                <ul className={`${showMenu ? 'flex' : 'hidden'} fixed flex-col gap-8 items-center justify-center z-40 top-0 bg-white w-full px-1 h-full`}>
+                <ul className={`${isMenuShowing ? 'flex' : 'hidden'} fixed flex-col gap-8 items-center justify-center z-40 top-0 bg-white w-full px-1 h-full`}>
                     <Items />
                 </ul>
                 <div className="flex md:hidden absolute z-50 right-0">
-                    <HamburguerButton method={menuHandler} />
+                    <HamburguerButton />
                 </div>
             </div>
         </header>

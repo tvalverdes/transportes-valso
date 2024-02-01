@@ -4,7 +4,7 @@ import { services } from "@/constants/constants"
 
 export const Services = () => {
     return (
-        <section className="bg-services-image hero">
+        <section id='servicios' className="bg-services-image hero">
             <div className="flex flex-col justify-center items-center w-full">
                 <div className="flex relative text-white justify-center items-center text-center py-12 w-full">
                     <SectionData sectionName="NUESTROS SERVICIOS"

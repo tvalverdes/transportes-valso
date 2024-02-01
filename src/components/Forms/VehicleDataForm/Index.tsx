@@ -1,7 +1,7 @@
 import { FileUpload } from "@/components/FileUpload/Index";
-import { FormRadioButton } from '@/components/FormInputs/FormRadioButton/Index';
+import { FormSelect } from '@/components/FormInputs/FormSelect/Index';
 import { FormTextArea } from "@/components/FormInputs/FormTextArea/Index";
-import { featurePlaceholder, provinces, vehicleModelRadioOptions, vehicleNames } from "@/constants/constants";
+import { featurePlaceholder, is4x4Data, provinces, vehicleNames } from "@/constants/constants";
 import { vehicleDataSchema } from "@/schema/schemas";
 import { rentVehicleDataState, useFormNumberState } from "@/store/useStore";
 import { getVehicleTypeAttributes } from '@/utils/dataFilter';
@@ -54,19 +54,16 @@ export const VehicleDataForm = () => {
 
     return (
         <form className="flex flex-col gap-4 my-8" onSubmit={handleSubmit(onSubmit)}>
-            <FormAutocomplete name="location" placeholder="Ubicación" control={control} options={provinces} error={errors.location} />
             <div className="flex flex-col sm:flex-row gap-2">
                 <div className="flex flex-col gap-4 basis-2/5">
+            <FormAutocomplete name="location" placeholder="Ubicación" control={control} options={provinces} error={errors.location} />
                     <FormField name="brand" register={register} placeholder="Marca" type="text" error={errors.brand} />
-                    <FormField name="model" placeholder="Modelo" register={register} type="text" error={errors.model} />
-                    <div className='flex justify-center items-center'>
-                      <label>¿Es 4x4?</label>
-                    <FormRadioButton options={vehicleModelRadioOptions} name='is4x4' register={register} />
-                    </div>
+                    <FormField name="fabricationYear" placeholder="Año de fabricación" register={register} type="number" error={errors.fabricationYear} />
                       
                 </div>
                 <div className="flex flex-col gap-4 basis-3/5">
-                    <FormField name="fabricationYear" placeholder="Año de fabricación" register={register} type="number" error={errors.fabricationYear} />
+                    <FormField name="model" placeholder="Modelo" register={register} type="text" error={errors.model} />
+                    <FormSelect name='is4x4' placeholder='¿Es 4x4?' error={errors.is4x4} register={register} options={is4x4Data} currentValue={data.vehicleData.is4x4} />
                     <FormAutocomplete 
                     name="vehicleType" 
                     control={control} 

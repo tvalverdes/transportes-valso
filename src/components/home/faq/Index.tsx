@@ -4,7 +4,7 @@ import { Questions } from "./questions/Index"
 
 export const Faq = () => {
     return (
-        <section className="grid grid-cols-1 lg:grid-cols-2 py-24 gap-4">
+        <section id='faq' className="grid grid-cols-1 lg:grid-cols-2 py-24 gap-4">
             <div className="px-12">
                 <SectionData sectionName="FAQ" title="Preguntas Frecuentes" />
                 <Questions />

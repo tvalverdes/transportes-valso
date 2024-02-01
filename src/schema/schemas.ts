@@ -5,7 +5,7 @@ export const vehicleDataSchema = z.object({
     location: z.string().trim()
         .min(1, { message: 'Debes ingresar la ubicación' }),
     brand: z.string().trim().toUpperCase().min(1, { message: 'Ingresa la marca' }),
-    is4x4: z.boolean(),
+    is4x4: z.string().trim().min(1, { message: 'Elige si es 4x4' }),
     model: z.string().trim().min(1, { message: 'Ingresa el modelo' }),
     fabricationYear: z.string().trim().refine(data => /^\d{4}$/.test(data), {
         message: 'Formato de año inválido',
